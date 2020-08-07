@@ -1,13 +1,8 @@
 /* eslint-disable prefer-const */
 import DOMStrings from './DOMStrings.js';
-import leftArrow from '../img/left-arrow-btn.png';
-import rightArrow from '../img/right-arrow-btn.png';
 import {
     insertHtml, offset, classAction, setProp,
 } from './functionsUI.js';
-
-setProp(DOMStrings.prevMonthBtn, 'src', leftArrow);
-setProp(DOMStrings.nextMonthBtn, 'src', rightArrow);
 
 
 const monthCalendar = ({

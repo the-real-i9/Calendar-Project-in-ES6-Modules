@@ -1,7 +1,3 @@
-
-import '../css/style.css';
-
-
 // Switch JS
 import { preset as presetSwitch } from '../modules/switchView.js';
 import '../modules/switchModel.js';

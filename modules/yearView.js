@@ -1,13 +1,9 @@
 /* eslint-disable prefer-const */
 import DOMStrings from './DOMStrings.js';
-import leftArrow from '../img/left-arrow-btn.png';
-import rightArrow from '../img/right-arrow-btn.png';
 import {
     selectorAll, insertHtml, classAction, setProp, offset,
 } from './functionsUI.js';
 
-setProp(DOMStrings.prevYearBtn, 'src', leftArrow);
-setProp(DOMStrings.nextYearBtn, 'src', rightArrow);
 
 const yearCalendar = ({
     yearSet, currDate, currWeek, currMonth, currYear,
