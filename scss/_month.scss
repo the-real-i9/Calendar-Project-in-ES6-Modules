@@ -1,0 +1,118 @@
+.month-calendar {
+    @include flex(flex-start, center, column);
+    display: none;
+    margin-top: 60px;
+    // margin-bottom: 30px;
+
+    .month-nav {
+        margin: 5px 0;
+        // width: 300px;
+        @include flex(space-between, center);
+
+        .month-year {
+            font: {
+                size: 33px;
+                weight: weight(bold);
+            }
+            #relv {
+                color: $primColor;
+            }
+            padding: 0 35px;
+        }
+        img {
+            width: 35px;
+        }
+    }
+
+    .month-cont {
+        width: 75%;
+        box-shadow: 0 0 6px rgba($black, $alpha: 0.16);
+        border-radius: 50px;
+        overflow: hidden;
+        transition: transform .5s 1s ease-in;
+
+        .mweekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            width: 90%;
+            margin: 23px auto 17px auto;
+
+            .mwday {
+                @include flex(center);
+                margin: 0 auto;
+                border: 2px solid $primColor;
+                width: 115px;
+                border-radius: 35px;
+                font-weight: weight(normal);
+                font-size: 17px;
+            }
+        }
+
+        .dates-cont {
+            width: 100%;
+            background: $dates-bg;
+            // height: 350px;
+            margin-top: 15px;
+            
+            .dates-grid {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                width: 90%;
+                margin: 0 auto;
+
+                span {
+                    margin: 0 auto;
+                    height: 70px;
+                    width: 115px;
+                    font-size: 17px;
+                    padding: 5px 0 0 13px;
+                }
+                .mdate {
+                    &:hover {
+                        background: $date-hover;
+                        border-radius: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.curr-mwday {
+    background: $primColor;
+    color: $white;
+}
+
+.curr-mdate {
+    background: $white;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 2px 0 $primColor;
+    color: $primColor;
+    position: relative;
+
+    #curr-time {
+        position: absolute; 
+        left: 0;
+        top: 35%;
+        font: {
+            size: 13px;
+            weight: weight(medium);
+        }
+        color: $curr-date;
+    }
+}
+
+.event {
+    position: relative;
+
+    .event-name {
+        position: absolute; 
+        left: 0;
+        top: 35%;
+        font: {
+            size: 13px !important;
+            weight: weight(medium);
+        }
+        color: $curr-date;
+    }
+}

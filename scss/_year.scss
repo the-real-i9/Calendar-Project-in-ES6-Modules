@@ -1,0 +1,105 @@
+.year-calendar {
+    @include flex(flex-start, center, column);
+    margin-bottom: 20px;
+    margin-top: 60px;
+
+    .year-nav {
+        margin: 10px 0 10px 0;
+        width: 225px;
+        @include flex(space-between, center);
+
+        .year {
+            font: {
+                size: 33px;
+                weight: weight(bold);
+            }
+            #relv {
+                color: $primColor;
+            }
+        }
+        img {
+            width: 35px;
+        }
+    }
+
+    .months-of-the-year {
+        width: 87%;
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 20px;
+
+        .month-of-year {
+            width: 275px;
+            padding: 2px 10px 5px 10px;
+            // height: 180px;
+            border-radius: 25px;
+            box-shadow: 0 0 6px rgba($black, $alpha: 0.16);
+            transform: translateY(3em);
+            opacity: 0;
+            transition: transform 1s ease-out,
+                        opacity 1s ease-out;
+
+            .month-name {
+                text-align: center;
+                font-size: 15px;
+            }
+
+            .weekdays {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                
+                .wday {
+                    margin: 0 auto;
+                    width: 30px;
+                    @include flex(center, center);
+                    font: {
+                        weight: weight(light);
+                        size: 15px;
+                    }
+                    color: $wkds;
+                }
+            }
+
+            .dates {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                
+                .date {
+                    margin: 0 auto;
+                    height: 30px;
+                    width: 30px;
+                    @include flex(center, center);
+                    border-radius: 50%;
+                    font: {
+                        weight: weight(light);
+                        size: 15px;
+                    }
+                }
+            }
+        }
+
+        @for $num from 1 through 11 {
+            #moy-#{$num} {
+                transition-delay: 0.1s * $num;
+            }
+        }
+
+    }
+
+}
+
+.curr-date {
+    background: $primColor;
+    color: $white;
+}
+
+.curr-wday {
+    color: $primColor !important;
+}
+
+
+.animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
